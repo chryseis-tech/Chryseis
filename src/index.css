@@ -1,0 +1,152 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Chryseis Technologies Brand Colors - Updated to exact brand colors */
+    --background: 0 0% 98%;
+    --foreground: 194 69% 24%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 194 69% 24%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 194 69% 24%;
+
+    /* Exact brand teal (#135166) converted to HSL */
+    --primary: 194 69% 24%;
+    --primary-foreground: 45 33% 67%;
+
+    /* Exact brand gold (#dbc078) converted to HSL */
+    --secondary: 45 33% 67%;
+    --secondary-foreground: 194 69% 24%;
+
+    /* Muted variants */
+    --muted: 194 30% 96%;
+    --muted-foreground: 194 30% 40%;
+
+    /* Brand Gold accent */
+    --accent: 45 33% 67%;
+    --accent-foreground: 194 69% 24%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 194 40% 98%;
+
+    --border: 194 20% 90%;
+    --input: 194 20% 95%;
+    --ring: 45 33% 67%;
+
+    /* Custom gradients with exact brand teal */
+    --gradient-primary: linear-gradient(135deg, hsl(194, 69%, 24%), hsl(194, 59%, 34%));
+    --gradient-gold: linear-gradient(135deg, hsl(45, 33%, 67%), hsl(45, 28%, 57%));
+    --gradient-hero: linear-gradient(135deg, hsl(194, 69%, 24%) 0%, hsl(194, 59%, 29%) 50%, hsl(194, 49%, 34%) 100%);
+    
+    /* Shadows with exact brand teal */
+    --shadow-elegant: 0 10px 30px -10px hsl(194 69% 24% / 0.3);
+    --shadow-gold: 0 0 40px hsl(45 33% 67% / 0.2);
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 194 69% 24%;
+    --sidebar-primary: 194 69% 24%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 194 30% 95%;
+    --sidebar-accent-foreground: 194 69% 24%;
+    --sidebar-border: 194 20% 90%;
+    --sidebar-ring: 45 33% 67%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 194 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 194 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 194 40% 98%;
+
+    --primary: 194 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 194 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 194 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 194 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 194 69% 24%;
+    --sidebar-foreground: 194 30% 95%;
+    --sidebar-primary: 45 33% 67%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 194 30% 20%;
+    --sidebar-accent-foreground: 194 30% 95%;
+    --sidebar-border: 194 30% 20%;
+    --sidebar-ring: 45 33% 67%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-arkhip;
+  }
+
+  *:focus-visible {
+    @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-background;
+  }
+
+  a:focus-visible,
+  button:focus-visible,
+  [tabindex]:focus-visible {
+    @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-background;
+  }
+}
+
+@layer utilities {
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  .focus\:not-sr-only:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: inherit;
+    margin: inherit;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+  }
+}
