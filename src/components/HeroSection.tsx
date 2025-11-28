@@ -14,7 +14,7 @@ const HeroSection = () => {
           <div className="text-center lg:text-left animate-fade-in">
             <div className="mb-4">
               <p className="text-secondary font-bold text-lg tracking-wide font-arkhip" aria-label="Company tagline">
-                EMPOWERING SOFTWARE WITH AI
+                EMPOWERING SOFTWARE WITH AI FFFF
               </p>
             </div>
 
