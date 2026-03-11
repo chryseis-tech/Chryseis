@@ -16,5 +16,6 @@ jobs:
         run: |
           echo '${{ secrets.FIREBASE_SERVICE_ACCOUNT_CHRYSEIS_WEBSITE }}' > /tmp/sa_key.json
           export GOOGLE_APPLICATION_CREDENTIALS=/tmp/sa_key.json
-          npx firebase-tools@latest deploy --only hosting --project chryseis-website
+          npx firebase-tools@latest --version
+          npx firebase-tools@latest deploy --only hosting --project chryseis-website --debug 2>&1
           rm -f /tmp/sa_key.json
